@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Mirza:wght@700&family=Roboto:wght@400;700&display=swap');
 
 
 *{
@@ -18,7 +18,10 @@ body {
 .book-list {
   width: 90vw;
   max-width: 1170px;
-  margin: 5rem auto;
+  margin-top: 2rem;
+  margin-bottom: 6rem;
+  margin-left: auto;
+  margin-right: auto;
   display: grid;
   gap: 2rem;
 }
@@ -57,4 +60,35 @@ body {
 
 .desc {
   margin-top: 1.25rem;
+}
+
+.btn-one {
+  color:#fff;
+  background: #f2051d;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-one:hover {
+  background: #5c5a5a;
+}
+
+.btn-two {
+  color:#fff;
+  background: #0e05b0;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-two:hover {
+  background: #5c5a5a;
+}
+
+.bruce {
+  font-family: Mirza;
+  font-size: 4rem;
+  margin-top: 5rem;
+  text-align: center;
 }

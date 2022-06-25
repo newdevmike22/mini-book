@@ -1,77 +1,22 @@
-const books = [
-  {
-    id: 1,
-    image: "https://m.media-amazon.com/images/I/61tJBNx1KsL._AC_UY436_FMwebp_QL65_.jpg",
-    title: "Bruce Lee's Jeet Kune Do",
-    author: "by Sam Fury and Diana Mangoba",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
-    price: "$14.99"
-  },
-  {
-    id: 2,
-    image: "https://m.media-amazon.com/images/I/71mkvRbiUPL._AC_UY436_FMwebp_QL65_.jpg",
-    title: "Bruce Lee's Fighting Method",
-    author: "by Bruce Lee",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
-    price: "$26.99"
-  },
-  {
-    id: 3,
-    image: "https://m.media-amazon.com/images/I/91e2UzRiM+L._AC_UY436_FMwebp_QL65_.jpg",
-    title: "Letters of the Dragon",
-    author: "by Bruce Lee",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
-    price: "$11.99"
-  }
-];
+import books from "./comps/books";
+import Book from "./comps/Book";
 
 const App = () => {
+  const bruceBooks = "Dragon Books"
+ 
   return (
-    <section className="book-list">
+    <section>
+    <h1 className="bruce">{bruceBooks}</h1>
+    <div className="book-list">
       {books.map((book) => {
         return (
-          <Book key={book.id} {...book}></Book>
+          <section>
+            <Book key={book.id} {...book}></Book>
+          </section>
         )
       })}
+    </div>
     </section>
-  )
-}
-
-const Book = ({ image, title, author, desc, price }) => {
-  // attribute, eventHandler
-  // onClick, onMouseOver
-  const clickHandler = (e) => {
-    console.log(e);
-    console.log(e.target)
-    alert("Be water my friend.");
-  };
-
-  const complex = (author) => {
-    console.log(author);
-  }
-
-  return (
-      <article className="book" onMouseOver={() => {
-        console.log(title);
-      }}>
-          <div>
-              <img src={image} alt="Bruce Lee Book" />
-          </div>
-          <div>
-              <h1 className="title" onClick={() => console.log(title)}>{title}</h1>
-          </div>
-          <div>
-              <p className="author">{author}</p>
-          </div>
-          <div>
-              <p className="desc">{desc}</p>
-          </div>
-          <div>
-              <h1 className="price">{price}</h1>
-          </div>
-          <button type="button" onClick={clickHandler}>Click Me!</button>&nbsp;&nbsp;
-          <button type="button" onClick={() => complex(author)}>Hit Me!</button>
-      </article>
   )
 }
 
