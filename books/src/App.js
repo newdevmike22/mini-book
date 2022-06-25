@@ -22,21 +22,21 @@ const App = () => {
   )
 }
 
-const Book = (props) => {
+const Book = ({image, title, author, price }) => {
 
   return (
       <article className="book">
           <div>
-              <img src={props.image} alt="Bruce Lee Book" />
+              <img src={image} alt="Bruce Lee Book" />
           </div>
           <div>
-              <h1 className="title">{props.title}</h1>
+              <h1 className="title">{title}</h1>
           </div>
           <div>
-              <p className="author">{props.author}</p>
+              <p className="author">{author}</p>
           </div>
           <div>
-              <h1 className="price">{props.price}</h1>
+              <h1 className="price">{price}</h1>
           </div>
       </article>
   )
