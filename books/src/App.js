@@ -1,5 +1,6 @@
 const books = [
   {
+    id: 1,
     image: "https://m.media-amazon.com/images/I/61tJBNx1KsL._AC_UY436_FMwebp_QL65_.jpg",
     title: "Bruce Lee's Jeet Kune Do",
     author: "by Sam Fury and Diana Mangoba",
@@ -7,6 +8,7 @@ const books = [
     price: "$14.99"
   },
   {
+    id: 2,
     image: "https://m.media-amazon.com/images/I/71mkvRbiUPL._AC_UY436_FMwebp_QL65_.jpg",
     title: "Bruce Lee's Fighting Method",
     author: "by Bruce Lee",
@@ -14,6 +16,7 @@ const books = [
     price: "$26.99"
   },
   {
+    id: 3,
     image: "https://m.media-amazon.com/images/I/91e2UzRiM+L._AC_UY436_FMwebp_QL65_.jpg",
     title: "Letters of the Dragon",
     author: "by Bruce Lee",
@@ -27,15 +30,15 @@ const App = () => {
     <section className="book-list">
       {books.map((book) => {
         return (
-          <Book book={book}></Book>
+          <Book key={book.id} {...book}></Book>
         )
       })}
     </section>
   )
 }
 
-const Book = (props) => {
-  const { image, title, author, desc, price } = props.book;
+const Book = ({ image, title, author, desc, price }) => {
+  //const { image, title, author, desc, price } = props;
 
   return (
       <article className="book">
