@@ -38,15 +38,27 @@ const App = () => {
 }
 
 const Book = ({ image, title, author, desc, price }) => {
-  //const { image, title, author, desc, price } = props;
+  // attribute, eventHandler
+  // onClick, onMouseOver
+  const clickHandler = (e) => {
+    console.log(e);
+    console.log(e.target)
+    alert("Be water my friend.");
+  };
+
+  const complex = (author) => {
+    console.log(author);
+  }
 
   return (
-      <article className="book">
+      <article className="book" onMouseOver={() => {
+        console.log(title);
+      }}>
           <div>
               <img src={image} alt="Bruce Lee Book" />
           </div>
           <div>
-              <h1 className="title">{title}</h1>
+              <h1 className="title" onClick={() => console.log(title)}>{title}</h1>
           </div>
           <div>
               <p className="author">{author}</p>
@@ -57,6 +69,8 @@ const Book = ({ image, title, author, desc, price }) => {
           <div>
               <h1 className="price">{price}</h1>
           </div>
+          <button type="button" onClick={clickHandler}>Click Me!</button>&nbsp;&nbsp;
+          <button type="button" onClick={() => complex(author)}>Hit Me!</button>
       </article>
   )
 }
